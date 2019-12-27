@@ -1,5 +1,15 @@
 .DS_Store
+
+# dependencies
+
 /.build
 /Packages
 Carthage/*
+
+# xcode project
+
 *.xcodeproj
+
+# fastlane
+
+fastlane/test_output/*
