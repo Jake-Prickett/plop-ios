@@ -10,7 +10,7 @@ import Foundation
 
 final class PLOPSectionHeader: UITableViewHeaderFooterView {
     static let reuseId = "PLOPSectionHeader"
-    
+
     var sectionType: PLOPSectionType = .other {
         didSet {
            setBackgroundColor()
@@ -21,16 +21,16 @@ final class PLOPSectionHeader: UITableViewHeaderFooterView {
         super.init(reuseIdentifier: reuseIdentifier)
         setBackgroundColor()
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         return nil
     }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         sectionType = .other
     }
-    
+
     private func setBackgroundColor() {
         switch sectionType {
         case .featureFlag:

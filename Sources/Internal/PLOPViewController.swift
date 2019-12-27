@@ -9,17 +9,17 @@
 import UIKit
 
 final class PLOPViewController: UIViewController {
-    
+
     init(dataSource: UITableViewDataSource, delegate: UITableViewDelegate) {
         super.init(nibName: nil, bundle: nil)
         tableView.dataSource = dataSource
         tableView.delegate = delegate
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         return nil
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -34,12 +34,12 @@ final class PLOPViewController: UIViewController {
         tv.backgroundColor = .darkModeBackground
         return tv
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
@@ -52,21 +52,21 @@ final class PLOPViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         setNeedsStatusBarAppearanceUpdate()
     }
-    
+
     private func configure() {
         view.backgroundColor = .darkModeBackground
         view.addSubview(tableView)
-        
+
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        
+
         tableView.register(PLOPCell.self, forCellReuseIdentifier: PLOPCell.reuseId)
         tableView.register(PLOPSectionHeader.self, forHeaderFooterViewReuseIdentifier: PLOPSectionHeader.reuseId)
         tableView.reloadData()
     }
-    
+
     func reload() {
         tableView.reloadData()
     }

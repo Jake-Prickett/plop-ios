@@ -12,7 +12,7 @@ open class SectionPLOPComponent {
     public let title: String?
     open var components: [PLOPComponent]
     public var sectionType: PLOPSectionType
-    
+
     public init(title: String? = nil, components: [PLOPComponent] = [], sectionType: PLOPSectionType = .other) {
         self.title = title
         self.components = components

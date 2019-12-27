@@ -9,7 +9,7 @@
 import Foundation
 
 public final class ButtonPLOPComponent: BasePLOPControlComponent<UIButton> {
-    
+
     public init(title: String, buttonTitle: String = "Do it!", action: @escaping ((ControlType) -> Void)) {
         let controlButton = UIButton(type: .system)
         controlButton.setTitle(buttonTitle, for: .normal)
