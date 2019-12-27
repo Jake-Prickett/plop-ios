@@ -14,7 +14,7 @@ setup:
 	osascript -e 'tell application "Xcode" to quit'
 	rm -rf PLOP.xc*
 	$(MAKE) xcodeproj
-	open PLOP.xcodeproj
+	open PLOP.xcodeproj/
 
 ## xcodeproj         : Generate xcodeproj
 xcodeproj:
