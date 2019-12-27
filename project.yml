@@ -1,0 +1,34 @@
+name: PLOP
+options:
+  usesTabs: false
+  indentWidth: 4
+  tabWidth: 4
+  bundleIdPrefix: com.PLOP
+targets:
+  PLOP:
+    type: framework
+    platform: iOS
+    deploymentTarget: "11.0"
+    sources: [Sources]
+    scheme:
+      testTargets:
+        - PLOPTests
+      gatherCoverageData: true
+  PLOPTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "11.0"
+    sources:
+      - path: Tests
+    dependencies:
+      - target: PLOP
+      - carthage: Quick
+      - carthage: Nimble
+  PLOPExample:
+    type: application
+    platform: iOS
+    deploymentTarget: "11.0"
+    sources: [Example]
+    dependencies:
+      - target: PLOP
+
