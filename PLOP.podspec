@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version               = "1.0.0"
   s.summary               = "Debug Panel for Development"
   s.description           = "Debug panel that can be utilized for handling debug features (toggles, shortcuts, etc.)"
-  s.homepage              = "https://github.com/fordmps/plop-ios.git"
+  s.homepage              = "https://github.com/Jake-Prickett/plop-ios"
   s.license               = { :type => "MIT", :file => "LICENSE" }
   s.author                = { "Jake-Prickett" => "jprickett821@gmail.com" }
   s.social_media_url      = ""

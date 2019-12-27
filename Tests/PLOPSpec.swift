@@ -63,6 +63,7 @@ class PLOPSpec: QuickSpec {
                     .tableView
                     .cellForRow(at: IndexPath(row: 0, section: 0)) as? PLOPCell else {
                         fail()
+                        return
                 }
                 expect(insertedCell.titleLabel.text).to(equal(switchComponent2.title))
             }
