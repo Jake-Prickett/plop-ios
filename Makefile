@@ -8,6 +8,7 @@ log:help
 install:
 	brew install xcodegen
 	brew install swiftlint
+	brew install carthage
 
 ## setup             : Local setup for Software Engineers (Quits xcode, removes existing project, creates new project & workspace, opens workspace)
 setup:

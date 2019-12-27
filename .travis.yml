@@ -1,15 +1,13 @@
 osx_image: xcode11.1
 language: swift
-xcode_xcodeproj: PLOP.xcodeproj
-xcode_scheme: PLOP
-xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
+before_install:
+  - make install
+  - make xcodeproj
+  - carthage update --platform iOS
 
 install:
   - bundle install
 
 # run tests
-script:
-  - make setup
-
 script:
   - fastlane test
