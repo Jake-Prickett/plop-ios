@@ -1,5 +1,5 @@
 
-<img src="https://github.com/Jake-Prickett/plop-ios/blob/master/Documentation/Images/PLOP_Demo.gif?raw=true" width="230" align="right">
+<img src="https://github.com/Jake-Prickett/plop-ios/blob/master/Documentation/Images/PLOP_Demo.gif?raw=true" width="270" align="right">
 
 </br>
 
