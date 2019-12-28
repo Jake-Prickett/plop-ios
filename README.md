@@ -7,15 +7,14 @@
 <img src="https://raw.githubusercontent.com/Jake-Prickett/plop-ios/master/Documentation/Images/logo_image.png" width="400">
 
 <H4 align="center">
+<br>
 Programmable Live Objects Panel
 <br><a href="https://github.com/Jake-Prickett">Jake Prickett</a>
 </H4>
-<p align="center">
-
-</p>
 </p>
 
 <p align="center">
+<br>
 <a href="https://travis-ci.org/Jake-Prickett/plop-ios"><img alt="Build Status" src="https://travis-ci.org/Jake-Prickett/plop-ios.svg?branch=master"/></a>
 <a href="https://codecov.io/gh/Jake-Prickett/plop-ios"><img alt="Code Coverage" src="https://codecov.io/gh/Jake-Prickett/plop-ios/branch/master/graph/badge.svg"/></a>
 <a href="https://developer.apple.com/swift"><img alt="Swift 5" src="https://img.shields.io/badge/language-Swift_5-orange.svg"/></a>
@@ -29,20 +28,22 @@ Programmable Live Objects Panel
 </p>
 </br>
 
+---
+
 ## Features
 
 TODO
-
-## Requirements
-* iOS 11.0+
-* Xcode 11.1+
-* Swift 5.0+
 
 ## Basic Usage
 
 TODO
 
 ## Installation
+
+## Requirements
+* iOS 11.0+
+* Xcode 11.1+
+* Swift 5.0+
 
 ### CocoaPods
 PLOP is available through [CocoaPods](<https://cocoapods.org/>). To install it, simply add the following line to your `Podfile`:
@@ -67,4 +68,4 @@ dependencies: [
 ### Manual
 Download and drop the `PLOP` directory into your project.
 
-</br>
+---
