@@ -11,3 +11,7 @@ install:
 # run tests
 script:
   - fastlane test
+
+# upload codecov report
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -J 'plop-ios'

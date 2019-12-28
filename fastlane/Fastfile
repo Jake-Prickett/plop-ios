@@ -23,6 +23,10 @@ platform :ios do
 
   desc "Run tests"
   lane :test do
-    run_tests(scheme: "PLOP")
+    scan(
+      scheme: "PLOP",
+      code_coverage: true,
+      clean: true
+      )
   end
 end
