@@ -22,8 +22,6 @@ targets:
       - path: Tests
     dependencies:
       - target: PLOP
-      - carthage: Quick
-      - carthage: Nimble
   PLOPExample:
     type: application
     platform: iOS

@@ -6,136 +6,124 @@
 //  Copyright © 2019 Jake Prickett. All rights reserved.
 //
 
-import Foundation
-import Quick
-import Nimble
+import XCTest
 
 @testable import PLOP
 
-class PLOPSpec: QuickSpec {
-    override func spec() {
-        describe("PLOPSpec") {
-            var rootViewController: UIViewController!
-            var plopNavigationController: UINavigationController!
-            var plopViewController: PLOPViewController!
+final class PLOPTests: XCTestCase {
+    var rootViewController: UIViewController!
+    var plopNavigationController: UINavigationController!
+    var plopViewController: PLOPViewController!
 
-            beforeEach {
-                rootViewController = UIViewController()
-                PLOP.showPanel()
-                plopNavigationController = PLOP.plopNavigationController
-                plopViewController = plopNavigationController.topViewController as? PLOPViewController
-            }
+    override func setUp() {
+        super.setUp()
+        rootViewController = UIViewController()
+        PLOP.showPanel()
+        plopNavigationController = PLOP.plopNavigationController
+        plopViewController = plopNavigationController.topViewController as? PLOPViewController
+    }
 
-            afterEach {
-                PLOP.removeAllComponents()
-                PLOP.hidePanel()
-            }
+    override func tearDown() {
+        super.tearDown()
+        PLOP.removeAllComponents()
+        PLOP.hidePanel()
+    }
 
-            it("should show the panel") {
-                expect(plopViewController).to(beAKindOf(PLOPViewController.self))
-            }
+    func testShowPanel() {
+        XCTAssertNotNil(plopViewController)
+    }
 
-            it("should display an added component") {
-                let buttonComponent = ButtonPLOPComponent(title: "Test") { _ in }
-                PLOP.add(component: buttonComponent)
-                expect(plopViewController.tableView.numberOfRows(inSection: 0)).to(equal(1))
-            }
+    func testDisplayingAddedComponent() {
+        let buttonComponent = ButtonPLOPComponent(title: "Test") { _ in }
+        PLOP.add(component: buttonComponent)
+        XCTAssertEqual(plopViewController.tableView.numberOfRows(inSection: 0), 1)
+    }
 
-            it("should display added components") {
-                let buttonComponent = ButtonPLOPComponent(title: "Test") { _ in }
-                let switchComponent = SwitchPLOPComponent(title: "Test 2") { _ in }
-                PLOP.add(components: [buttonComponent, switchComponent])
-                expect(plopViewController.tableView.numberOfRows(inSection: 0)).to(equal(2))
-            }
+    func testDisplayingMultipleAddedComponents() {
+        let buttonComponent = ButtonPLOPComponent(title: "Test") { _ in }
+        let switchComponent = SwitchPLOPComponent(title: "Test 2") { _ in }
+        PLOP.add(components: [buttonComponent, switchComponent])
+        XCTAssertEqual(plopViewController.tableView.numberOfRows(inSection: 0), 2)
+    }
 
-            it("should insert components at the correct index path") {
-                let buttonComponent = ButtonPLOPComponent(title: "Test") { _ in }
-                let switchComponent = SwitchPLOPComponent(title: "Test 2") { _ in }
-                PLOP.add(components: [buttonComponent, switchComponent])
+    func testInsertComponent() {
+        let buttonComponent = ButtonPLOPComponent(title: "Test") { _ in }
+        let switchComponent = SwitchPLOPComponent(title: "Test 2") { _ in }
+        PLOP.add(components: [buttonComponent, switchComponent])
 
-                let switchComponent2 = SwitchPLOPComponent(title: "Test 1") { _ in }
-                PLOP.insert(component: switchComponent2, atIndexPath: IndexPath(row: 0, section: 0))
+        let switchComponent2 = SwitchPLOPComponent(title: "Test 1") { _ in }
+        PLOP.insert(component: switchComponent2, atIndexPath: IndexPath(row: 0, section: 0))
 
-                plopViewController.view.setNeedsLayout()
-                plopViewController.view.layoutIfNeeded()
+        plopViewController.view.setNeedsLayout()
+        plopViewController.view.layoutIfNeeded()
 
-                guard let insertedCell = plopViewController
-                    .tableView
-                    .cellForRow(at: IndexPath(row: 0, section: 0)) as? PLOPCell else {
-                        fail()
-                        return
-                }
-                expect(insertedCell.titleLabel.text).to(equal(switchComponent2.title))
-            }
-
-            it("should remove a component") {
-                let buttonComponent = ButtonPLOPComponent(title: "Test") { _ in }
-                PLOP.add(component: buttonComponent)
-                expect(plopViewController.tableView.numberOfRows(inSection: 0)).to(equal(1))
-                PLOP.remove(component: buttonComponent)
-                expect(plopViewController.tableView.numberOfRows(inSection: 0)).to(equal(0))
-            }
-
-            it("should remove a component at index path") {
-                let buttonComponent = ButtonPLOPComponent(title: "Test") { _ in }
-                PLOP.add(component: buttonComponent)
-                expect(plopViewController.tableView.numberOfRows(inSection: 0)).to(equal(1))
-                PLOP.removeComponent(atIndexPath: IndexPath(row: 0, section: 0))
-                expect(plopViewController.tableView.numberOfRows(inSection: 0)).to(equal(0))
-            }
-
-            it("should remove all components") {
-                let buttonComponent = ButtonPLOPComponent(title: "Test") { _ in }
-                let switchComponent = SwitchPLOPComponent(title: "Test 2") { _ in }
-                PLOP.add(components: [buttonComponent, switchComponent])
-                expect(plopViewController.tableView.numberOfRows(inSection: 0)).to(equal(2))
-                PLOP.removeAllComponents()
-                expect(plopViewController.tableView.numberOfRows(inSection: 0)).to(equal(0))
-            }
-
-            it("should display added section") {
-                let section = SectionPLOPComponent(title: "Test1")
-                PLOP.add(section: section)
-                expect(plopViewController.tableView.numberOfSections).to(equal(2))
-                let dataSource = plopViewController.tableView.dataSource!
-                expect(dataSource.tableView!(plopViewController.tableView, titleForHeaderInSection: 1)).to(equal("Test1"))
-            }
-
-            it("should insert a section") {
-                let section = SectionPLOPComponent(title: "Test1")
-                PLOP.insert(section: section, atIndex: 0)
-                expect(plopViewController.tableView.numberOfSections).to(equal(2))
-                let dataSource = plopViewController.tableView.dataSource!
-                expect(dataSource.tableView!(plopViewController.tableView, titleForHeaderInSection: 0)).to(equal("Test1"))
-            }
-
-            it("should remove a section") {
-                let section = SectionPLOPComponent(title: "Test1")
-                PLOP.add(section: section)
-                expect(plopViewController.tableView.numberOfSections).to(equal(2))
-                PLOP.remove(section: section)
-                expect(plopViewController.tableView.numberOfSections).to(equal(1))
-                let dataSource = plopViewController.tableView.dataSource!
-                expect(dataSource.tableView!(plopViewController.tableView, titleForHeaderInSection: 0)).to(beNil())
-            }
-
-            it("should remove a section at index") {
-                let section = SectionPLOPComponent(title: "Test1")
-                PLOP.add(section: section)
-                expect(plopViewController.tableView.numberOfSections).to(equal(2))
-                PLOP.removeSection(atIndex: 1)
-                expect(plopViewController.tableView.numberOfSections).to(equal(1))
-                let dataSource = plopViewController.tableView.dataSource!
-                expect(dataSource.tableView!(plopViewController.tableView, titleForHeaderInSection: 0)).to(beNil())
-            }
-
-            it("should enable/disable the shake gesture") {
-                expect(rootViewController.canBecomeFirstResponder).to(beFalse())
-                PLOP.enableShakeToLaunchPanel()
-                expect(rootViewController.canBecomeFirstResponder).to(beTrue())
-                PLOP.disableShakeToLaunchPanel()
-                expect(rootViewController.canBecomeFirstResponder).to(beFalse())
-            }
+        guard let insertedCell = plopViewController
+            .tableView
+            .cellForRow(at: IndexPath(row: 0, section: 0)) as? PLOPCell else {
+                XCTFail("Unable to locate cell for row at index path")
+                return
         }
+        XCTAssertEqual(insertedCell.titleLabel.text, switchComponent2.title)
+    }
+
+    func testRemoveComponent() {
+        let buttonComponent = ButtonPLOPComponent(title: "Test") { _ in }
+        PLOP.add(component: buttonComponent)
+        XCTAssertEqual(plopViewController.tableView.numberOfRows(inSection: 0), 1)
+        PLOP.remove(component: buttonComponent)
+        XCTAssertEqual(plopViewController.tableView.numberOfRows(inSection: 0), 0)
+    }
+
+    func testRemoveComponentAtIndexPath() {
+        let buttonComponent = ButtonPLOPComponent(title: "Test") { _ in }
+        PLOP.add(component: buttonComponent)
+        XCTAssertEqual(plopViewController.tableView.numberOfRows(inSection: 0), 1)
+        PLOP.removeComponent(atIndexPath: IndexPath(row: 0, section: 0))
+        XCTAssertEqual(plopViewController.tableView.numberOfRows(inSection: 0), 0)
+    }
+
+    func testRemoveAllComponents() {
+        let buttonComponent = ButtonPLOPComponent(title: "Test") { _ in }
+        let switchComponent = SwitchPLOPComponent(title: "Test 2") { _ in }
+        PLOP.add(components: [buttonComponent, switchComponent])
+        XCTAssertEqual(plopViewController.tableView.numberOfRows(inSection: 0), 2)
+        PLOP.removeAllComponents()
+        XCTAssertEqual(plopViewController.tableView.numberOfRows(inSection: 0), 0)
+    }
+
+    func testAddSection() {
+        let section = SectionPLOPComponent(title: "Test1")
+        PLOP.add(section: section)
+        XCTAssertEqual(plopViewController.tableView.numberOfSections, 2)
+        let dataSource = plopViewController.tableView.dataSource!
+        XCTAssertEqual(dataSource.tableView!(plopViewController.tableView, titleForHeaderInSection: 1), "Test1")
+    }
+
+    func testRemoveSection() {
+        let section = SectionPLOPComponent(title: "Test1")
+        PLOP.add(section: section)
+        XCTAssertEqual(plopViewController.tableView.numberOfSections, 2)
+        PLOP.remove(section: section)
+        XCTAssertEqual(plopViewController.tableView.numberOfSections, 1)
+        let dataSource = plopViewController.tableView.dataSource!
+        XCTAssertNil(dataSource.tableView!(plopViewController.tableView, titleForHeaderInSection: 0))
+    }
+
+    func testRemoveSectionAtIndex() {
+        let section = SectionPLOPComponent(title: "Test1")
+        PLOP.add(section: section)
+        XCTAssertEqual(plopViewController.tableView.numberOfSections, 2)
+        PLOP.removeSection(atIndex: 1)
+        XCTAssertEqual(plopViewController.tableView.numberOfSections, 1)
+        let dataSource = plopViewController.tableView.dataSource!
+        XCTAssertNil(dataSource.tableView!(plopViewController.tableView, titleForHeaderInSection: 0))
+    }
+
+    func testEnablingShakeGesture() {
+        XCTAssertFalse(rootViewController.canBecomeFirstResponder)
+        PLOP.enableShakeToLaunchPanel()
+        XCTAssertTrue(rootViewController.canBecomeFirstResponder)
+        PLOP.disableShakeToLaunchPanel()
+        XCTAssertFalse(rootViewController.canBecomeFirstResponder)
     }
 }
