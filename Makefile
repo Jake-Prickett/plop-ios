@@ -21,6 +21,10 @@ setup:
 xcodeproj:
 	xcodegen
 
+## test              : Execute Tests
+test:
+	xcodebuild -scheme PLOP -project ./PLOP.xcodeproj -destination 'platform=iOS Simulator,id=285857B2-2ECB-45C9-84E8-42E52CE3F5E2' build test
+
 ## lint              : Executes Swiftlint and outputs any warnings/errors in readable format
 lint:
 	swiftlint lint --reporter emoji --config .swiftlint.yml

@@ -10,7 +10,7 @@ install:
 
 # run tests
 script:
-  - fastlane test
+  - make test
 
 # upload codecov report
 after_success:
