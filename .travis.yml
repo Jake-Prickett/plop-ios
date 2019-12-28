@@ -5,9 +5,6 @@ before_install:
   - make xcodeproj
   - carthage update --platform iOS
 
-install:
-  - bundle install
-
 # run tests
 script:
   - make test
