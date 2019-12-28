@@ -23,7 +23,7 @@ xcodeproj:
 
 ## test              : Execute Tests
 test:
-	xcodebuild -scheme PLOP -project ./PLOP.xcodeproj -destination 'platform=iOS Simulator,name:iPhone 11,OS=13.1' build test
+	xcodebuild -scheme PLOP -project ./PLOP.xcodeproj -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=13.1' build test
 
 ## lint              : Executes Swiftlint and outputs any warnings/errors in readable format
 lint:
