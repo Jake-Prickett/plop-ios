@@ -3,10 +3,6 @@ language: swift
 before_install:
   - make install
   - make xcodeproj
-  - carthage update --platform iOS
-
-install:
-  - bundle install
 
 # run tests
 script:
