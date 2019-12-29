@@ -30,7 +30,7 @@ Programmable Live Objects Panel
 
 ---
 
-## Features
+## Features 🎁
 
 TODO
 
@@ -39,17 +39,29 @@ The Debug Panel is a hidden screen in an app that can be accessed via a defined 
 Within the debug panel you can add functionality and hook up code that is not ready for production. 
 
 
-`Note: The debug panel is only accessible when the DEBUG preprocessor flag is set to 1`
+> Note: The debug panel is only accessible when the DEBUG preprocessor flag is set to 1
+
+Much of your setup can be done in your `AppDelegate.swift` you can have your setup code similar to below:
+
+```swift
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        #if DEBUG
+	setupPLOPComponents() // Where you add sections, components, switches, etc.
+	PLOP.enableShakeToLaunchPanel() // Enables Shake gesture presentation
+	#endif
+        return true
+    }
+```
 
 ## Frequently Asked Questions
 
 Check out the [FAQ Page](https://github.com/Jake-Prickett/plop-ios/blob/master/Documentation/FAQ.md>)
 
-## Installation
+## Installation 📦
 
 Please reference the below instructions for installing PLOP.
 
-## Requirements
+## Requirements 📝
 * iOS 11.0+
 * Xcode 11.1+
 * Swift 5.0+
