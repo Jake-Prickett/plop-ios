@@ -49,6 +49,7 @@ Within the debug panel you can add functionality and hook up code that is not re
 Much of your setup can be done in your `AppDelegate.swift` you can have your setup code similar to below:
 
 ```swift
+    import UIKit
     import PLOP
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
@@ -63,6 +64,7 @@ Much of your setup can be done in your `AppDelegate.swift` you can have your set
 Or, if you'd rather have the panel be presented on tap of a button:
 
 ```swift
+   import UIKit
    import PLOP
    
    class ViewController: UIViewController {
