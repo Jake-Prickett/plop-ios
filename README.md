@@ -35,10 +35,19 @@ Programmable Live Objects Panel
 TODO
 
 ## Basic Usage
+The Debug Panel is a hidden screen in an app that can be accessed via a defined entry point (Button only visible in `DEBUG` builds) or the shake gesture (CMD+CTRL+Z on Simulator).
+Within the debug panel you can add functionality and hook up code that is not ready for production. 
 
-TODO
+
+`Note: The debug panel is only accessible when the DEBUG preprocessor flag is set to 1`
+
+## Frequently Asked Questions
+
+Check out the [FAQ Page](https://github.com/Jake-Prickett/plop-ios/blob/master/Documentation/FAQ.md>)
 
 ## Installation
+
+Please reference the below instructions for installing PLOP.
 
 ## Requirements
 * iOS 11.0+
@@ -69,3 +78,5 @@ dependencies: [
 Download and drop the `PLOP` directory into your project.
 
 ---
+
+If you notice issues or have feature requests - please feel free to open an issue leveraging the corresponding template. Also, if you'd like to contribute - Please do! 
