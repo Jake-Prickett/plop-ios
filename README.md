@@ -34,16 +34,22 @@ Programmable Live Objects Panel
 
 TODO
 
+## Use Cases 📱
+
 ## Basic Usage
 The Debug Panel is a hidden screen in an app that can be accessed via a defined entry point (Button only visible in `DEBUG` builds) or the shake gesture (CMD+CTRL+Z on Simulator).
+
 Within the debug panel you can add functionality and hook up code that is not ready for production. 
 
-
 > Note: The debug panel is only accessible when the DEBUG preprocessor flag is set to 1
+
+---
 
 Much of your setup can be done in your `AppDelegate.swift` you can have your setup code similar to below:
 
 ```swift
+    import PLOP
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         #if DEBUG
 	setupPLOPComponents() // Where you add sections, components, switches, etc.
@@ -52,6 +58,44 @@ Much of your setup can be done in your `AppDelegate.swift` you can have your set
         return true
     }
 ```
+
+Or, if you'd rather have the panel be presented on tap of a button:
+
+```swift
+   import PLOP
+   
+   class ViewController: UIViewController {
+
+      override func viewDidLoad() {
+          super.viewDidLoad()
+
+          let button = UIButton(type: .system)
+          button.setTitle("Show Panel", for: .normal)
+          button.addTarget(self, action: #selector(togglePLOP), for: .touchUpInside)
+
+          view.addSubview(button)
+          button.translatesAutoresizingMaskIntoConstraints = false
+          button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+          button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+
+          configurePLOP()
+      }
+
+      private func configurePLOP() {
+          /*
+    	     Where you add sections, components, switches, etc.
+  	   */
+
+          PLOP.reloadPanel()
+      }
+
+      @objc func togglePLOP() {
+          PLOP.showPanel()
+      }
+   }  
+```
+
+> Note: Ensure that the button is only visible in `DEBUG` builds, otherwise you could have some issues where this could be visible in your `RELEASE` Scheme!!
 
 ## Frequently Asked Questions
 
@@ -91,4 +135,6 @@ Download and drop the `PLOP` directory into your project.
 
 ---
 
-If you notice issues or have feature requests - please feel free to open an issue leveraging the corresponding template. Also, if you'd like to contribute - Please do! 
+If you notice issues or have feature requests - please feel free to open an issue leveraging the corresponding template. 
+
+**If you'd like to contribute - Please do!**
