@@ -32,9 +32,11 @@ Programmable Live Objects Panel
 
 ## Features 🎁
 
-TODO
+> TODO
 
 ## Use Cases 📱
+
+> TODO
 
 ## Basic Usage
 The Debug Panel is a hidden screen in an app that can be accessed via a defined entry point (Button only visible in `DEBUG` builds) or the shake gesture (CMD+CTRL+Z on Simulator).
