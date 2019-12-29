@@ -16,7 +16,6 @@ Programmable Live Objects Panel
 <p align="center">
 <br>
 <a href="https://travis-ci.org/Jake-Prickett/plop-ios"><img alt="Build Status" src="https://travis-ci.org/Jake-Prickett/plop-ios.svg?branch=master"/></a>
-<a href="https://codecov.io/gh/Jake-Prickett/plop-ios"><img alt="Code Coverage" src="https://codecov.io/gh/Jake-Prickett/plop-ios/branch/master/graph/badge.svg"/></a>
 <a href="https://developer.apple.com/swift"><img alt="Swift 5" src="https://img.shields.io/badge/language-Swift_5-orange.svg"/></a>
 <a href="https://cocoapods.org/pods/PLOP"><img alt="CocoaPods" src="https://img.shields.io/cocoapods/v/PLOP.svg"/></a>
 <a href="https://github.com/Carthage/Carthage"><img alt="Carthage" src="https://img.shields.io/badge/carthage-compatible-4BC51D.svg?style=flat)"/></a>
