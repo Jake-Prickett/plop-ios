@@ -31,11 +31,21 @@ Programmable Live Objects Panel
 
 ## Features 🎁
 
-> TODO
+* Hidden Developer Screen
+* Ability to add tools/features to develop faster
+* Pre-Built Components to easily allow for common interactions
 
-## Use Cases 📱
+## Example Use Cases 📱
 
-> TODO
+* Enable/Disable Feature Flags 🚩
+* Shortcut to a feature or screen you are working on
+* Location simulation (on device or simulator)
+* Configuring Test Data
+* Clearing settings/preferences
+* Switching between environments (Dev, Prod, etc.)
+* Debug Logging
+
+And many more! 🤓 The possibilities are limitless.
 
 ## Basic Usage
 The Debug Panel is a hidden screen in an app that can be accessed via a defined entry point (Button only visible in `DEBUG` builds) or the shake gesture (CMD+CTRL+Z on Simulator).
