@@ -8,7 +8,7 @@
 
 <H4 align="center">
 <br>
-Programmable Live Objects Panel
+Programmable Live Objects Panel 📱
 <br><a href="https://github.com/Jake-Prickett">Jake Prickett</a>
 </H4>
 </p>
@@ -31,7 +31,7 @@ Programmable Live Objects Panel
 
 ## Elevator Pitch 
 
-Ever... **TODO**
+PLOP (Programmable Live Objects Panel) is a hidden screen (or screens) in your app that can be leveraged to make Development and Testing easier both on the Xcode Simulator and iOS Device. This is done by adding various components that interact with code that isn't quite Production ready or Development specific needs that boost productivity. The PLOP Panel is only present during `DEBUG` builds, making it the perfect Developer tool!
 
 ## Features 🎁
 
