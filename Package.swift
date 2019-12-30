@@ -25,9 +25,7 @@ let package = Package(
         .testTarget(
             name: "PLOPTests",
             dependencies: [
-                "PLOP",
-                "Quick",
-                "Nimble"
+                "PLOP"
             ],
             path: "Tests")
     ]
