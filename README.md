@@ -63,9 +63,7 @@ Within the debug panel you can add functionality and hook up code that is not re
 Much of your setup can be done in your `AppDelegate.swift` you can have your setup code similar to below:
 
 ```swift
-    import UIKit
-    import PLOP
-
+    ...
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         #if DEBUG
 	setupPLOPComponents() // Where you add sections, components, switches, etc.
@@ -73,14 +71,12 @@ Much of your setup can be done in your `AppDelegate.swift` you can have your set
 	#endif
         return true
     }
+    ...
 ```
 
 Or, if you'd rather have the panel be presented on tap of a button:
 
 ```swift
-   import UIKit
-   import PLOP
-   
    class ViewController: UIViewController {
 
       override func viewDidLoad() {
@@ -90,10 +86,7 @@ Or, if you'd rather have the panel be presented on tap of a button:
           button.setTitle("Show Panel", for: .normal)
           button.addTarget(self, action: #selector(togglePLOP), for: .touchUpInside)
 
-          view.addSubview(button)
-          button.translatesAutoresizingMaskIntoConstraints = false
-          button.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-          button.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+          ... 
 
           configurePLOP()
       }
