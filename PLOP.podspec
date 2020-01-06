@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name         = "PLOP"
   s.version      = "1.0.1"
-  s.platform     = :ios, "11.0"
+  s.platform     = :ios, "9.0"
   s.summary      = "Debug Panel for Development."
   
   s.description  = <<-DESC
