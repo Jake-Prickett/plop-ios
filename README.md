@@ -107,16 +107,42 @@ Or, if you'd rather have the panel be presented on tap of a button:
 
 > Note: Ensure that the button is only visible in `DEBUG` builds, otherwise you could have some issues where this could be visible in your `RELEASE` Scheme!!
 
+### How to add a Component to PLOP
+
+Button Component
+```swift
+    let component = ButtonPLOPComponent(title: "Example Component", 
+                                        buttonTitle: "Go!", 
+                                        action: { _ in /* Execute whatever you want here! */})
+```
+
+Switch Component
+```swift
+    let component = SwitchPLOPComponent(title: "Switch 2", 
+                                        action: { component in /* Execute whatever you want here! */ })
+```
+
+### How to add a section to PLOP
+
+```swift
+    let section = SectionPLOPComponent(
+        title: "Feature Flags",
+        components: [ /* Insert Components Here */],
+        sectionType: .featureFlag
+    )
+    PLOP.add(section: section)
+```
+
 ## Frequently Asked Questions
 
-Check out the [FAQ Page](https://github.com/Jake-Prickett/plop-ios/blob/master/Documentation/FAQ.md>)
+Check out the [FAQ Page](https://github.com/Jake-Prickett/plop-ios/blob/master/Documentation/FAQ.md)
 
 ## Installation 📦
 
 Please reference the below instructions for installing PLOP.
 
 ## Requirements 📝
-* iOS 11.0+
+* iOS 9.0+
 * Xcode 11.1+
 * Swift 5.0+
 
