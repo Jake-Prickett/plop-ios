@@ -133,10 +133,6 @@ Switch Component
     PLOP.add(section: section)
 ```
 
-## Frequently Asked Questions
-
-Check out the [FAQ Page](https://github.com/Jake-Prickett/plop-ios/blob/master/Documentation/FAQ.md)
-
 ## Installation 📦
 
 Please reference the below instructions for installing PLOP.
