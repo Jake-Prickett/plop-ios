@@ -31,7 +31,6 @@ final class PLOPViewController: UIViewController {
         tv.tableFooterView = UIView()
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.separatorColor = .darkGray
-        tv.backgroundColor = .darkModeBackground
         return tv
     }()
 
@@ -48,13 +47,11 @@ final class PLOPViewController: UIViewController {
         navigationController?.navigationBar.tintColor = nil
         navigationController?.navigationBar.barStyle = .default
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
-        navigationController?.navigationBar.barTintColor = .darkModeBackground
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         setNeedsStatusBarAppearanceUpdate()
     }
 
     private func configure() {
-        view.backgroundColor = .darkModeBackground
         view.addSubview(tableView)
 
         tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
