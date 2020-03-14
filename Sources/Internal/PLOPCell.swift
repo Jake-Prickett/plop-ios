@@ -36,8 +36,6 @@ final class PLOPCell: UITableViewCell {
 
     private func configure() {
         selectionStyle = .none
-        backgroundColor = .darkModeBackground
-        titleLabel.textColor = .white
         configureStackView()
     }
 

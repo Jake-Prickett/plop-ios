@@ -73,7 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0C2D678998792C62C33B1D6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C2D678998792C62C33B1D6B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		38938AEE94B0F47B10511031 /* SwitchPLOPComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchPLOPComponent.swift; sourceTree = "<group>"; };
 		396BF3C220A38B3619A8ADE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3B57C4BB3087464EAA5F6635 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,10 +81,10 @@
 		479EF4C9B39DC19AA3D9C3C7 /* PLOPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLOPCell.swift; sourceTree = "<group>"; };
 		4C106F36D190E042CD63B6A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73971863C50969E255D758D6 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		7AD97D5C475ED69D331B8CEF /* PLOPTests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PLOPTests.plist; sourceTree = "<group>"; };
+		7AD97D5C475ED69D331B8CEF /* PLOPTests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = PLOPTests.plist; sourceTree = "<group>"; };
 		7D84C3AEF00A410CE4A42590 /* PLOP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLOP.h; sourceTree = "<group>"; };
 		9699BB775394E12169B20B25 /* PLOPExample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PLOPExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A14E1A8FC150649CD504B009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A14E1A8FC150649CD504B009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A29B6BF1D33800C550B02F96 /* PLOP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLOP.swift; sourceTree = "<group>"; };
 		B1A91CEDFC4F539BD341D789 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDBFFA6F0726DEF5C669A8E1 /* PLOPTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PLOPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +271,8 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
+				TargetAttributes = {
+				};
 			};
 			buildConfigurationList = 7406273C639F68ECD1E61050 /* Build configuration list for PBXProject "PLOP" */;
 			compatibilityVersion = "Xcode 10.0";
@@ -614,7 +616,7 @@
 				DC84A9F6A2495AB32ED10A08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Debug;
 		};
 		4E964D61076F59D48BE312A4 /* Build configuration list for PBXNativeTarget "PLOP" */ = {
 			isa = XCConfigurationList;
@@ -623,7 +625,7 @@
 				B1BBB8258D86F6539A657E2A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Debug;
 		};
 		65848EF813A298DE2D0D0D1D /* Build configuration list for PBXNativeTarget "PLOPExample" */ = {
 			isa = XCConfigurationList;
@@ -632,7 +634,7 @@
 				5E1A20978E56EC61D20E4DB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = "";
+			defaultConfigurationName = Debug;
 		};
 		7406273C639F68ECD1E61050 /* Build configuration list for PBXProject "PLOP" */ = {
 			isa = XCConfigurationList;
