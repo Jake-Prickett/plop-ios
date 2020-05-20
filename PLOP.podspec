@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "PLOP"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.platform     = :ios, "9.0"
   s.summary      = "Debug Panel for Development."
   
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.author       = { "Jake Prickett" => "jprickett821@gmail.com" }
   s.source       = { :git => "https://github.com/Jake-Prickett/plop-ios.git", :tag => "1.1.0" }
   
-  s.swift_version = "5.1"
+  s.swift_version = "5.0"
   s.source_files = "Sources/**/*.{h,swift}"
   
   end
