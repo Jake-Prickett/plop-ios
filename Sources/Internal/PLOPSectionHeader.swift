@@ -6,6 +6,7 @@
 //  Copyright © 2019 Jake Prickett. All rights reserved.
 //
 
+#if canImport(UIKit)
 import Foundation
 
 final class PLOPSectionHeader: UITableViewHeaderFooterView {
@@ -42,3 +43,4 @@ final class PLOPSectionHeader: UITableViewHeaderFooterView {
         }
     }
 }
+#endif
