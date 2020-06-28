@@ -35,11 +35,17 @@ final class PLOPSectionHeader: UITableViewHeaderFooterView {
     private func setBackgroundColor() {
         switch sectionType {
         case .featureFlag:
-            contentView.backgroundColor = .darkModeGreen
+            contentView.backgroundColor = .systemBlue
         case .location:
-            contentView.backgroundColor = .darkModeRed
+            contentView.backgroundColor = .systemRed
+        case .debugTools:
+            contentView.backgroundColor = .systemPink
+        case .development:
+            contentView.backgroundColor = .systemTeal
+        case .configuration:
+            contentView.backgroundColor = .systemGreen
         case .other:
-            contentView.backgroundColor = .darkModePurple
+            contentView.backgroundColor = .systemPurple
         }
     }
 }

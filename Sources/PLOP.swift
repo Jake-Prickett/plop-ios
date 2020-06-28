@@ -256,7 +256,7 @@ public final class PLOP: NSObject {
         if rootPLOPController == nil {
             rootPLOPController = PLOPViewController(dataSource: self, delegate: self)
             let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(dismissPanel))
-            doneButton.tintColor = .darkModeBlue
+            doneButton.tintColor = .systemBlue
             rootPLOPController?.navigationItem.leftBarButtonItem = doneButton
         }
     }

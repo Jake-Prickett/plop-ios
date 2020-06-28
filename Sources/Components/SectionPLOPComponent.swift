@@ -25,6 +25,9 @@ open class SectionPLOPComponent {
 public enum PLOPSectionType {
     case featureFlag
     case location
+    case debugTools
+    case development
+    case configuration
     case other
 }
 #endif

@@ -14,7 +14,7 @@ public final class SwitchPLOPComponent: BasePLOPControlComponent<UISwitch> {
     public init(title: String, isOn: Bool = false, action: @escaping ((ControlType) -> Void)) {
         let controlSwitch = UISwitch()
         controlSwitch.isOn = isOn
-        controlSwitch.onTintColor = .darkModeBlue
+        controlSwitch.onTintColor = .systemBlue
         super.init(title: title, control: controlSwitch, action: action, controlEvent: .valueChanged)
     }
 }

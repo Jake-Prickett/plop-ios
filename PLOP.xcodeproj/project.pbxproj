@@ -14,7 +14,6 @@
 		4A288F286E07FE5D493E8B6A /* PLOPSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE702641A28FBFA75C0860A /* PLOPSpec.swift */; };
 		4BAFF4AF5AC946CA01566140 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2727081DC1C94A93FB1B5211 /* Main.storyboard */; };
 		52BC86603E77A99632E28DA2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396BF3C220A38B3619A8ADE0 /* ViewController.swift */; };
-		75A1485BC0A06BCF5B66CC68 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73971863C50969E255D758D6 /* UIColor+Extensions.swift */; };
 		8134682C715D4415AA93986F /* SwitchPLOPComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38938AEE94B0F47B10511031 /* SwitchPLOPComponent.swift */; };
 		813600C3B9C1B5F3C78DD4C7 /* PLOPTests.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AD97D5C475ED69D331B8CEF /* PLOPTests.plist */; };
 		8D6442E763DB63BEC9ABFF6E /* PLOP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CE129E0EB74E8F5E0DEC8809 /* PLOP.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -80,7 +79,6 @@
 		3E7849B9463A9BD688048A18 /* SectionPLOPComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionPLOPComponent.swift; sourceTree = "<group>"; };
 		479EF4C9B39DC19AA3D9C3C7 /* PLOPCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PLOPCell.swift; sourceTree = "<group>"; };
 		4C106F36D190E042CD63B6A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		73971863C50969E255D758D6 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		7AD97D5C475ED69D331B8CEF /* PLOPTests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = PLOPTests.plist; sourceTree = "<group>"; };
 		7D84C3AEF00A410CE4A42590 /* PLOP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PLOP.h; sourceTree = "<group>"; };
 		9699BB775394E12169B20B25 /* PLOPExample.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PLOPExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,7 +189,6 @@
 				479EF4C9B39DC19AA3D9C3C7 /* PLOPCell.swift */,
 				D20F02B1FB4EB1B0BC1CABE7 /* PLOPSectionHeader.swift */,
 				C3D4EAA02F2E8B15EFE414D8 /* PLOPViewController.swift */,
-				73971863C50969E255D758D6 /* UIColor+Extensions.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -271,14 +268,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1020;
-				TargetAttributes = {
-				};
 			};
 			buildConfigurationList = 7406273C639F68ECD1E61050 /* Build configuration list for PBXProject "PLOP" */;
 			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				en,
 				Base,
 			);
 			mainGroup = 94C9CF1C0E6AC61119EECBE6;
@@ -326,7 +322,6 @@
 				A63CCC17E52916EBECE8128B /* PLOPViewController.swift in Sources */,
 				CC206B97693C17F13D0959A3 /* SectionPLOPComponent.swift in Sources */,
 				8134682C715D4415AA93986F /* SwitchPLOPComponent.swift in Sources */,
-				75A1485BC0A06BCF5B66CC68 /* UIColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
