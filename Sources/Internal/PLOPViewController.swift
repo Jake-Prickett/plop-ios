@@ -10,7 +10,6 @@
 import UIKit
 
 final class PLOPViewController: UIViewController {
-
     init(dataSource: UITableViewDataSource, delegate: UITableViewDelegate) {
         super.init(nibName: nil, bundle: nil)
         tableView.dataSource = dataSource
@@ -21,17 +20,13 @@ final class PLOPViewController: UIViewController {
         return nil
     }
 
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.estimatedRowHeight = 44
         tv.rowHeight = UITableView.automaticDimension
         tv.tableFooterView = UIView()
         tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.separatorColor = .darkGray
+        tv.separatorColor = .systemGray
         return tv
     }()
 
