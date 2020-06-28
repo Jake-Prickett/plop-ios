@@ -6,10 +6,11 @@
 //  Copyright © 2019 Jake Prickett. All rights reserved.
 //
 
+#if canImport(UIKit)
+import UIKit
 import Foundation
 
 public final class SwitchPLOPComponent: BasePLOPControlComponent<UISwitch> {
-
     public init(title: String, isOn: Bool = false, action: @escaping ((ControlType) -> Void)) {
         let controlSwitch = UISwitch()
         controlSwitch.isOn = isOn
@@ -17,3 +18,4 @@ public final class SwitchPLOPComponent: BasePLOPControlComponent<UISwitch> {
         super.init(title: title, control: controlSwitch, action: action, controlEvent: .valueChanged)
     }
 }
+#endif

@@ -6,6 +6,8 @@
 //  Copyright © 2019 Jake Prickett. All rights reserved.
 //
 
+#if canImport(UIKit)
+import UIKit
 import Foundation
 
 final class PLOPCell: UITableViewCell {
@@ -65,3 +67,4 @@ final class PLOPCell: UITableViewCell {
         plopInputView = nil
     }
 }
+#endif

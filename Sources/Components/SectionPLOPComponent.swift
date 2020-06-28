@@ -6,6 +6,8 @@
 //  Copyright © 2019 Jake Prickett. All rights reserved.
 //
 
+#if canImport(UIKit)
+import UIKit
 import Foundation
 
 open class SectionPLOPComponent {
@@ -25,3 +27,4 @@ public enum PLOPSectionType {
     case location
     case other
 }
+#endif

@@ -6,6 +6,8 @@
 //  Copyright © 2019 Jake Prickett. All rights reserved.
 //
 
+#if canImport(UIKit)
+import UIKit
 import Foundation
 
 open class BasePLOPControlComponent<T: UIControl>: PLOPComponent {
@@ -36,3 +38,4 @@ open class BasePLOPControlComponent<T: UIControl>: PLOPComponent {
         self.action(control)
     }
 }
+#endif

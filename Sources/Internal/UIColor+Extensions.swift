@@ -6,6 +6,7 @@
 //  Copyright © 2019 Jake Prickett. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 extension UIColor {
@@ -23,3 +24,4 @@ extension UIColor {
 
     static let darkModeBackground = UIColor.rgb(red: 41, green: 42, blue: 48)
 }
+#endif
